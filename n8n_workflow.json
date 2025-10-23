@@ -1,0 +1,956 @@
+{
+  "name": "Research AI Agent",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1264,
+        -608
+      ],
+      "id": "01ea3c9f-5f3b-436b-a789-f59cfac94665",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "j1loilC77lz1zlPG",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/j1loilC77lz1zlPG",
+          "cachedResultName": "DOAJ"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date_start": "={{ $json.date_start }}",
+            "date_end": "={{ $json.date_end }}",
+            "keyword": "={{ $json.keyword }}",
+            "limit": "={{ $json.limit }}"
+          },
+          "matchingColumns": [
+            "date_start",
+            "date_end",
+            "keyword",
+            "limit"
+          ],
+          "schema": [
+            {
+              "id": "date_start",
+              "displayName": "date_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_end",
+              "displayName": "date_end",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "keyword",
+              "displayName": "keyword",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "limit",
+              "displayName": "limit",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        -784
+      ],
+      "name": "Call DOAJ",
+      "id": "7958892a-4489-4063-b76f-63da0b36a8b2",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "LQjb1u9GxlXeLguL",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/LQjb1u9GxlXeLguL",
+          "cachedResultName": "SemanticScholar"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        -576
+      ],
+      "name": "Call SemanticScholar",
+      "id": "5f1a03f1-3c96-436d-a0fd-1bc14ee2e1f1",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "0K0guD3X7rrgI7GV",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/0K0guD3X7rrgI7GV",
+          "cachedResultName": "OpenAlex"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date_start": "={{ $json.date_start }}",
+            "date_end": "={{ $json.date_end }}",
+            "keyword": "={{ $json.keyword }}",
+            "limit": "={{ $json.limit }}"
+          },
+          "matchingColumns": [
+            "date_start",
+            "date_end",
+            "keyword",
+            "limit"
+          ],
+          "schema": [
+            {
+              "id": "date_start",
+              "displayName": "date_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_end",
+              "displayName": "date_end",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "keyword",
+              "displayName": "keyword",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "limit",
+              "displayName": "limit",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        -368
+      ],
+      "name": "Call OpenAlex",
+      "id": "52ce1e97-7637-4195-86e4-5171acac3922",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "0SZkHs5g93ZP48tp",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/0SZkHs5g93ZP48tp",
+          "cachedResultName": "arXiv"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        -144
+      ],
+      "name": "Call arXiv",
+      "id": "334aae96-c4dc-4c30-8391-36431c0bcf7a",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "sNk75w1Usx5XYh5S",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/sNk75w1Usx5XYh5S",
+          "cachedResultName": "CrossRef"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date_start": "={{ $json.date_start }}",
+            "date_end": "={{ $json.date_end }}",
+            "keyword": "={{ $json.keyword }}",
+            "limit": "={{ $json.limit }}"
+          },
+          "matchingColumns": [
+            "date_start",
+            "date_end",
+            "keyword",
+            "limit"
+          ],
+          "schema": [
+            {
+              "id": "date_start",
+              "displayName": "date_start",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_end",
+              "displayName": "date_end",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "keyword",
+              "displayName": "keyword",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "limit",
+              "displayName": "limit",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -192,
+        -1008
+      ],
+      "name": "Call CrossRef",
+      "id": "af379797-2fef-4bbe-b785-6811dc52f428"
+    },
+    {
+      "parameters": {
+        "content": "**📡 Call APIs to Get Scientific Papers**\n",
+        "height": 1120,
+        "width": 368,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -320,
+        -1056
+      ],
+      "typeVersion": 1,
+      "id": "bd853b95-2de0-4217-999f-e45e4abdc50e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "**🧩 FILTROS:**  \nBusca por palabra o contexto.\n",
+        "height": 336,
+        "width": 272
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -880,
+        -736
+      ],
+      "typeVersion": 1,
+      "id": "881e1644-f4a3-44e2-a032-1c8b236b87cd",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "sendTo": "jefersonapaza@gmail.com",
+        "subject": "Status:500 - No se pudo ejecutar las API's",
+        "message": "=Hola Jeferson,  El flujo de n8n se ejecutó  a las: {{ new Date().toLocaleString('es-PE', { timeZone: 'America/Lima', hour12: false }) }}  Saludos, Tu workflow automatizado ⚙️",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        752,
+        -336
+      ],
+      "id": "c699908d-5cdc-47b0-a92a-91c74eb5de44",
+      "name": "Send a message",
+      "webhookId": "89731a40-4cbd-48c1-bf40-daa8a85f1154",
+      "credentials": {
+        
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 5,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        304,
+        -656
+      ],
+      "id": "35bea642-1209-4c7a-8b70-e99d0e219daf",
+      "name": "merges-call-API's",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={ \n  \"flag\": true,\n  \"contexto\": \"{{ $json.contexto }}\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        496,
+        -608
+      ],
+      "id": "5df1f202-8c7f-4554-b543-771fc493bbfc",
+      "name": "conditional-kafka"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5159e935-dc92-40e2-99e4-157eaa91c97c",
+              "leftValue": "={{ $json.flag }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        -608
+      ],
+      "id": "470e9491-84aa-417f-b49e-085041a7de0c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "collection": "paper",
+        "options": {
+          "limit": 1
+        },
+        "query": "{\n  \"revisado\": 0\n}"
+      },
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1.2,
+      "position": [
+        976,
+        -784
+      ],
+      "id": "f4b5666b-3ae7-499e-a9dd-27cca2e78091",
+      "name": "Find documents",
+      "alwaysOutputData": false,
+      "credentials": {
+       
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1168,
+        -768
+      ],
+      "id": "1eb3e7a1-45ca-42c4-b45c-1aa2865a5f01",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d3aa18e5-72b3-4cd8-b654-c1094228449d",
+              "name": "_id",
+              "value": "={{ $json._id }}",
+              "type": "object"
+            },
+            {
+              "id": "48a79356-62cd-463a-81d5-093cb6d8b1e4",
+              "name": "title",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "974cd727-4fda-4bde-8c4e-19a413b01ae8",
+              "name": "abstract",
+              "value": "={{ $json.abstract }}",
+              "type": "string"
+            },
+            {
+              "id": "b0b3d3fb-efef-47df-bc07-31f7fba37637",
+              "name": "doi",
+              "value": "={{ $json.doi }}",
+              "type": "string"
+            },
+            {
+              "id": "fa756e2f-7795-4cae-a810-455154cea1be",
+              "name": "contexto",
+              "value": "={{ $json.contexto }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1312,
+        -544
+      ],
+      "id": "037b1517-ea58-43f3-be8e-6a7b71a813ba",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "content": "---\n**🤖 AI Assistant**  \nLet the assistant analyze, summarize, and score the relevance of academic papers.  \nYou can:  \n- 🔍 Search by keyword or DOI  \n- 🧠 Generate contextual insights  \n- 📊 Assign relevance scores (0–100)  \n- 🗂️ Suggest related research topics  \n---\n",
+        "height": 896,
+        "width": 1104,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        896,
+        -960
+      ],
+      "id": "a2ef99d3-cdc3-4917-8a3c-b3faafa1208d",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Eres un evaluador experto en investigación científica especializado en análisis de relevancia de artículos académicos.\n\nTu tarea es analizar artículos y asignar un puntaje de prioridad entre 0 y 100, según los criterios que se detallan más abajo.\nDebes considerar la información proporcionada por el usuario (contexto, título, resumen y DOI) como fuente principal para tu evaluación.\n\nSigue estas instrucciones cuidadosamente:\n\nPrimero, si es posible, busca información adicional en la web usando el DOI.\n\nExtrae el título completo, resumen extendido, palabras clave, metodología, resultados y conclusiones.\n\nSi logras obtener información desde la web, indícalo explícitamente en tu análisis.\n\nSi no puedes acceder a la web o no encuentras el artículo, analiza solo los datos proporcionados (título, resumen, contexto) y continúa con la evaluación igualmente.\n\nCriterios de puntuación:\nAsigna el valor del campo \"prioridad\" según los siguientes rangos:\n\nDe 0 a 25: El artículo no trata el tema ni la aplicación deseada, o solo lo menciona superficialmente.\n\nDe 26 a 50: El artículo aborda el tema general (por ejemplo, inteligencia artificial, salud, educación, etc.), pero no trata la aplicación o contexto específico buscado.\n\nDe 51 a 75: El artículo toca la aplicación deseada (por ejemplo, inteligencia artificial en medicina), pero no profundiza en el tema exacto buscado (por ejemplo, inteligencia artificial en cáncer).\n\nDe 76 a 100: El artículo coincide plenamente con el tema y la aplicación buscada, mostrando una alineación directa y completa con el contexto solicitado.\n\nSiempre explica:\n\nDe qué trata el artículo.\n\nQué metodología o enfoque utiliza (por ejemplo, revisión sistemática, estudio de caso, etc.).\n\nSi la información fue encontrada en la web o inferida localmente.\n\nCómo se relaciona o no con el contexto de búsqueda.\n\nFormato de salida obligatorio:\n{\n  \"prioridad\": <número entre 0 y 100>,\n  \"comentario\": \"Breve resumen técnico con metodología, fuente de información y análisis de relevancia.\",\n  \"revisado\": 1\n}\n\nRegla final importante:\nSi el artículo presenta alguna relación parcial, indirecta o conceptual con el contexto de búsqueda, no asignes 0, sino un valor proporcional dentro del rango correspondiente.\nSolo usa 0 cuando el artículo sea completamente ajeno al contexto.\n\nMantén el texto del campo \"comentario\" breve (10 a 15 líneas máximo), técnico y coherente. El campo \"revisado\" siempre debe ser 1.",
+              "role": "system"
+            },
+            {
+              "content": "=Contexto de búsqueda: {{$json.contexto}}\nTítulo: {{$json.title}}\nResumen: {{$json.abstract}}\nDOI: {{$json.doi}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1040,
+        -304
+      ],
+      "id": "bcb4c1b5-b0c3-43d9-93ec-c33ae6fad73d",
+      "name": "Message a model",
+      "credentials": {
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c06fe710-04f7-44e8-a2bc-0e14c1f376a9",
+              "leftValue": "={{ $json.title }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "3a8d235e-f901-4931-b58c-dbbbb77dec5e",
+              "leftValue": "={{ $json.abstract }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "ignoreCase": false
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1056,
+        -528
+      ],
+      "id": "a3f3fe3b-54c9-4dfd-a44d-79ed6cf10750",
+      "name": "If2",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1584,
+        -384
+      ],
+      "id": "38985b57-fae4-4120-b2b5-5c39ffcb69fc",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "operation": "findOneAndUpdate",
+        "collection": "paper",
+        "updateKey": "_id",
+        "fields": "revisado,comentario,prioridad",
+        "options": {
+          "useDotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.mongoDb",
+      "typeVersion": 1.2,
+      "position": [
+        1840,
+        -288
+      ],
+      "id": "33694055-18ad-48fd-9b93-8e47a8dadaba",
+      "name": "Find and update documents",
+      "credentials": {
+      
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item;\n\n// Tu JSON tiene la forma: item.json.message.content\nconst content = item.json.message?.content;\n\nif (!content) {\n  throw new Error(\"No existe el campo 'message.content' en la entrada.\");\n}\n\n// Buscamos el bloque { ... } en el string\nconst match = content.match(/{[\\s\\S]*}/);\n\nif (!match) {\n  throw new Error(\"No se encontró ningún bloque JSON dentro del campo content.\");\n}\n\nlet extractedJson;\ntry {\n  extractedJson = JSON.parse(match[0]);\n} catch (error) {\n  throw new Error(\"El bloque encontrado no es un JSON válido: \" + error.message);\n}\n\n// Retorna el desglose del JSON encontrado, fusionado con la entrada original\nreturn {\n  json: {\n    //...item.json,\n    ...extractedJson\n  }\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        -304
+      ],
+      "id": "3cd362ea-06c0-4251-86ba-1a287f1cc86d",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "93643d50-3b1c-4c8a-b0b7-3f3373602773",
+              "name": "keyword",
+              "value": "artificialintelligence",
+              "type": "string"
+            },
+            {
+              "id": "452f8d3c-8c12-42ff-a20c-836bc3c8e401",
+              "name": "limit",
+              "value": 5,
+              "type": "number"
+            },
+            {
+              "id": "6a04368d-f2fe-40f7-8209-c1c660839002",
+              "name": "date_start",
+              "value": "2022-01-01",
+              "type": "string"
+            },
+            {
+              "id": "9d4fba1d-f7bb-45fa-adb5-0ed3554df685",
+              "name": "date_end",
+              "value": "2025-09-01",
+              "type": "string"
+            },
+            {
+              "id": "ff63604c-76b8-46e8-881e-bd40a4ecb1e0",
+              "name": "contexto",
+              "value": "Articulos de inteligencia artificial que usen chatbots",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -800,
+        -624
+      ],
+      "id": "12729b0c-0d9c-4723-be92-f159f1e5fb86",
+      "name": "🔍 keywords search"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "🔍 keywords search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call CrossRef": {
+      "main": [
+        [
+          {
+            "node": "merges-call-API's",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call OpenAlex": {
+      "main": [
+        [
+          {
+            "node": "merges-call-API's",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Call DOAJ": {
+      "main": [
+        [
+          {
+            "node": "merges-call-API's",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Call SemanticScholar": {
+      "main": [
+        [
+          {
+            "node": "merges-call-API's",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Call arXiv": {
+      "main": [
+        [
+          {
+            "node": "merges-call-API's",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "merges-call-API's": {
+      "main": [
+        [
+          {
+            "node": "conditional-kafka",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "conditional-kafka": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Find documents",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find documents": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Find and update documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find and update documents": {
+      "main": [
+        [
+          {
+            "node": "conditional-kafka",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "🔍 keywords search": {
+      "main": [
+        [
+          {
+            "node": "Call CrossRef",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Call arXiv",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Call OpenAlex",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Call SemanticScholar",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Call DOAJ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "108a66d8-00e8-4d0e-bccc-76e37d3afdf4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5473d2b24ff9da1eb0fb551e4e43972d12b15eeb8736b160c17a74f92992f255"
+  },
+  "id": "61ijlr6syNSTRi28",
+  "tags": []
+}
